@@ -15,4 +15,5 @@ public class Actor2D {
     Position position;
     Direction2D direction2D;
     Angle2D angle2D;
+    double feetPerSec;
 }
