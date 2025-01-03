@@ -4,7 +4,10 @@ import murphy.software.games.platform2d.move.config.ESpeed;
 import murphy.software.games.platform2d.move.utils.Rounder;
 
 public class SpeedController {
-    public static final double feetToPixelRatio = 0.4;
+    /**
+     * Smaller number moves at a longer distance i.e. faster.
+     */
+    public static final double feetToPixelRatio = 0.3;
     public static final double frameRate = 25;
 
     /**
@@ -34,7 +37,7 @@ public class SpeedController {
      */
     public static double speed(double distance) {
         double value = distance / feetToPixelRatio / frameRate;
-        return Rounder.round3(value);
+        return Rounder.round4(value);
     }
 
     public static double speed(ESpeed distance) {

@@ -19,9 +19,9 @@ import murphy.software.games.platform2d.move.movement.SpeedController;
 public enum ESpeed {
     still(0),
     crawl(2),
-    walk(4),
-    run(6),
-    sprint(7);
+    walk(6),
+    run(10),
+    sprint(12);
     private final double feetPerSec;
     ESpeed(double distance) {
         feetPerSec = distance;
@@ -29,7 +29,7 @@ public enum ESpeed {
 
     /**
      * The distance is the amount of feet the object will cover in a second.  Walking is
-     * considered 4 feet per second.
+     * considered 6 feet per second.
      */
     public double getDistance() {
         return feetPerSec;

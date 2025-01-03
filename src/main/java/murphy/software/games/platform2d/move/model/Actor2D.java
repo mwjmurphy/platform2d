@@ -1,9 +1,6 @@
 package murphy.software.games.platform2d.move.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 @AllArgsConstructor
@@ -11,9 +8,17 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true, fluent = true)
 @Getter
 @Setter
+@ToString
 public class Actor2D {
     Position position;
-    Direction2D direction2D;
     Angle2D angle2D;
     double feetPerSec;
+
+    public void changeX(double amount) {
+        position.x(position.x() + amount);
+    }
+    public void changeY(double amount) {
+        position.y(position.y() - amount);
+    }
+
 }

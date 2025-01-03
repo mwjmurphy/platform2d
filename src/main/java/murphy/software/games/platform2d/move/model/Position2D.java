@@ -9,9 +9,7 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @ToString
-public class Position {
+public class Position2D {
     private double x;
     private double y;
-    private double z;
-
 }
