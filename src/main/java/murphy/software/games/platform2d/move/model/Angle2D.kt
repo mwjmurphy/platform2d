@@ -1,21 +1,12 @@
-package murphy.software.games.platform2d.move.model;
+package murphy.software.games.platform2d.move.model
 
-import lombok.*;
-import lombok.experimental.Accessors;
+class Angle2D(var angle: Double = 0.0) {
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Accessors(chain = true, fluent = true)
-@Getter
-@Setter
-@ToString
-public class Angle2D {
-    private double angle;  // 0 to 360 in steps
-
-    public void clockwise(double amount) {
-        angle += amount;
+    fun clockwise(amount: Double) {
+        angle += amount
     }
-    public void antiClockwise(double amount) {
-        angle -= amount;
+
+    fun antiClockwise(amount: Double) {
+        angle -= amount
     }
 }

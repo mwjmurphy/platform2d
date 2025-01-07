@@ -1,13 +1,12 @@
-package murphy.software.games.platform2d.move.config;
+package murphy.software.games.platform2d.move.config
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class ESpeedTest {
+class ESpeedTest {
 
     @Test
-    void testSpeed(){
-        assertEquals(4.0, ESpeed.walk.getDistance());
+    fun testSpeed() {
+        Assertions.assertEquals(6.0, ESpeed.walk.feetPerSec)
     }
 }

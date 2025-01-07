@@ -1,6 +1,8 @@
-package murphy.software.games.platform2d.move.movement;
+package murphy.software.games.platform2d.move.movement
 
-import murphy.software.games.platform2d.move.model.Position2D;
+import murphy.software.games.platform2d.move.model.Position2D
+import kotlin.math.cos
+import kotlin.math.sin
 
 /**
  * <b>Distance Controller</b>
@@ -14,15 +16,16 @@ import murphy.software.games.platform2d.move.model.Position2D;
  *     The angle is in degrees from 0 to 359
  * </p>
  */
-public class DistanceController {
+class DistanceController {
 
-    public static Position2D distance(double fps, double angle) {
-        double distance = SpeedController.speed(fps);
-        double radians = Math.toRadians(angle);
-        return new Position2D()
-                .x(Math.sin(radians) * distance)
-                .y(Math.cos(radians) * distance);
+    companion object {
+        val speedController: SpeedController = SpeedController()
     }
+    val companion = Companion
 
-
+    fun distance(fps: Double, angle: Double): Position2D {
+        val distance = speedController.speed(fps)
+        val radians = Math.toRadians(angle)
+        return Position2D(sin(radians) * distance, cos(radians) * distance)
+    }
 }

@@ -1,6 +1,4 @@
-package murphy.software.games.platform2d.move.config;
-
-import murphy.software.games.platform2d.move.movement.SpeedController;
+package murphy.software.games.platform2d.move.config
 
 /**
  * <h1>ESpeed</h1>
@@ -16,22 +14,18 @@ import murphy.software.games.platform2d.move.movement.SpeedController;
  * </p>
  *
  */
-public enum ESpeed {
-    still(0),
-    crawl(2),
-    walk(6),
-    run(10),
-    sprint(12);
-    private final double feetPerSec;
-    ESpeed(double distance) {
-        feetPerSec = distance;
-    }
+enum class ESpeed(val feetPerSec: Double) {
+    still(0.0),
+    crawl(2.0),
+    walk(6.0),
+    run(10.0),
+    sprint(12.0);
 
     /**
      * The distance is the amount of feet the object will cover in a second.  Walking is
      * considered 6 feet per second.
      */
-    public double getDistance() {
-        return feetPerSec;
+    fun getDistance(): Double {
+        return feetPerSec
     }
 }

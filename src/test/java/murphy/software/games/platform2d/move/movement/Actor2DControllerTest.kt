@@ -1,21 +1,21 @@
-package murphy.software.games.platform2d.move.movement;
+package murphy.software.games.platform2d.move.movement
 
-import murphy.software.games.platform2d.move.model.Actor2D;
-import murphy.software.games.platform2d.move.model.Angle2D;
-import murphy.software.games.platform2d.move.model.Position;
-import org.junit.jupiter.api.Test;
+import murphy.software.games.platform2d.move.model.Actor2D
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertNotNull
+import org.junit.jupiter.api.Test
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-public class Actor2DControllerTest {
-
+class Actor2DControllerTest {
     @Test
-    void testConstructor() {
-        Actor2D actor2D = new Actor2D()
-                .angle2D(new Angle2D().angle(0))
-                .position(new Position().x(100.0).y(100.0).z(0))
-                .feetPerSec(1);
-        Actor2DController actor2DController = new Actor2DController(actor2D);
-        assertNotNull(actor2DController);
+    fun testConstructor() {
+        val actor2D: Actor2D = Actor2D().apply {
+            angle2D.angle = 0.0
+            position2D.x = 100.0
+            position2D.y = 100.0
+            feetPerSec = 1.0
+        }
+        val actor2DController = Actor2DController(actor2D)
+        assertNotNull(actor2DController)
+        assertEquals(100.0, actor2D.position2D.x)
     }
 }

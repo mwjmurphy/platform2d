@@ -1,22 +1,18 @@
-package murphy.software.games.platform2d.move.movement;
+package murphy.software.games.platform2d.move.movement
 
-import murphy.software.games.platform2d.move.config.ESpeed;
-import murphy.software.games.platform2d.move.utils.Rounder;
-import org.junit.jupiter.api.Test;
+import murphy.software.games.platform2d.move.config.ESpeed
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class SpeedControllerTest {
+class SpeedControllerTest {
 
     @Test
-    void testSpeed() {
-        assertEquals(getDistance(ESpeed.walk), SpeedController.speed(ESpeed.walk));
-        assertEquals(getDistance(ESpeed.crawl), SpeedController.speed(ESpeed.crawl));
-        assertEquals(getDistance(ESpeed.run), SpeedController.speed(ESpeed.run));
-        assertEquals(getDistance(ESpeed.sprint), SpeedController.speed(ESpeed.sprint));
+    fun testSpeed() {
+        val sc = SpeedController()
+        Assertions.assertEquals(0.8, sc.speed(ESpeed.walk))
+        Assertions.assertEquals(0.2667, sc.speed(ESpeed.crawl))
+        Assertions.assertEquals(1.3333, sc.speed(ESpeed.run))
+        Assertions.assertEquals(1.6, sc.speed(ESpeed.sprint))
     }
 
-    private double getDistance(ESpeed distance) {
-        return Rounder.round3(distance.getDistance() / SpeedController.feetToPixelRatio * SpeedController.frameRate);
-    }
 }

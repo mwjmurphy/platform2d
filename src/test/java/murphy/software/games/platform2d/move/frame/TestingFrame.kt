@@ -1,26 +1,26 @@
-package murphy.software.games.platform2d.move.frame;
+package murphy.software.games.platform2d.move.frame
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Graphics2D
+import javax.swing.JFrame
 
-public class TestingFrame extends JFrame {
-
-    public TestingFrame() throws InterruptedException {
-        super.setTitle("Testing Frame");
-        super.setSize(900, 600);
-        super.setLocation(100, 100);
-        super.setResizable(false);
-        super.add(new TestingPanel());
-        super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        super.setVisible(true);
+class TestingFrame : JFrame(){
+    init {
+        super.setTitle("Testing Frame")
+        super.setSize(900, 600)
+        super.setLocation(100, 100)
+        super.setResizable(false)
+        super.add(TestingPanel())
+        super.setDefaultCloseOperation(EXIT_ON_CLOSE)
+        super.setVisible(true)
     }
 
-    public void clear() {
-        Graphics2D g2d = (Graphics2D) this.getGraphics();
-        g2d.clearRect(0,0,900, 900);
+    fun clear() {
+        val g2d = this.graphics as Graphics2D
+        g2d.clearRect(0, 0, 900, 900)
     }
-    public void drawDot(int x, int y) {
-        Graphics2D g2d = (Graphics2D) this.getGraphics();
-        g2d.drawRect(x,y, 1, 1);
+
+    fun drawDot(x: Int, y: Int) {
+        val g2d = this.graphics as Graphics2D
+        g2d.drawRect(x, y, 1, 1)
     }
 }

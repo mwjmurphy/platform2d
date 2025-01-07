@@ -1,17 +1,14 @@
-package murphy.software.games.platform2d.move.movement;
+package murphy.software.games.platform2d.move.movement
 
-import murphy.software.games.platform2d.move.model.Position;
+import murphy.software.games.platform2d.move.model.Position2D
 
-public class PositionController {
-
-
-    void move(Position mover, double xdiff, double ydiff, double zdiff) {
-        mover.x(diff(mover.x(), xdiff));
-        mover.y(diff(mover.y(), ydiff));
-        mover.z(diff(mover.z(), zdiff));
+class PositionController {
+    fun move(mover: Position2D, xdiff: Double, ydiff: Double) {
+        mover.x = diff(mover.x, xdiff)
+        mover.y = diff(mover.y, ydiff)
     }
 
-    private double diff(double d, double diff) {
-        return d+diff;
+    private fun diff(d: Double, diff: Double): Double {
+        return d + diff
     }
 }

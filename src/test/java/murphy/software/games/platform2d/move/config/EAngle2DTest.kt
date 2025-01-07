@@ -1,19 +1,19 @@
-package murphy.software.games.platform2d.move.config;
+package murphy.software.games.platform2d.move.config
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 
-public class EAngle2DTest {
+class EAngle2DTest {
 
     @Test
-    void testEAngle2D() {
-        assertEquals(0, EAngle2D.UP.getAngle());
-        assertEquals(90, EAngle2D.RIGHT.getAngle());
-        assertEquals(180, EAngle2D.DOWN.getAngle());
-        assertEquals(270, EAngle2D.LEFT.getAngle());
-        assertEquals(1.5707963267948966, EAngle2D.RIGHT.getRadians());
-        assertEquals(3.1415926535897930, EAngle2D.DOWN.getRadians());
-        assertEquals(4.71238898038469, EAngle2D.LEFT.getRadians());
-        assertEquals(0, EAngle2D.UP.getRadians());
+    fun testEAngle2D() {
+        Assertions.assertEquals(0.0, EAngle2D.UP.angle)
+        Assertions.assertEquals(90.0, EAngle2D.RIGHT.angle)
+        Assertions.assertEquals(180.0, EAngle2D.DOWN.angle)
+        Assertions.assertEquals(270.0, EAngle2D.LEFT.angle)
+        Assertions.assertEquals(1.5707963267948966, EAngle2D.RIGHT.getRadians())
+        Assertions.assertEquals(3.1415926535897930, EAngle2D.DOWN.getRadians())
+        Assertions.assertEquals(4.71238898038469, EAngle2D.LEFT.getRadians())
+        Assertions.assertEquals(0.0, EAngle2D.UP.getRadians())
     }
 }

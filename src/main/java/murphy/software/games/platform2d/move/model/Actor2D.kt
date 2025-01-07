@@ -1,24 +1,12 @@
-package murphy.software.games.platform2d.move.model;
+package murphy.software.games.platform2d.move.model
 
-import lombok.*;
-import lombok.experimental.Accessors;
+class Actor2D (var position2D: Position2D = Position2D(), var angle2D: Angle2D = Angle2D(), var feetPerSec : Double = 0.0) {
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Accessors(chain = true, fluent = true)
-@Getter
-@Setter
-@ToString
-public class Actor2D {
-    Position position;
-    Angle2D angle2D;
-    double feetPerSec;
-
-    public void changeX(double amount) {
-        position.x(position.x() + amount);
-    }
-    public void changeY(double amount) {
-        position.y(position.y() - amount);
+    fun changeX(amount: Double) {
+        position2D.x = position2D.x + amount
     }
 
+    fun changeY(amount: Double) {
+        position2D.y = position2D.y + amount
+    }
 }
